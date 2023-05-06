@@ -1,146 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>hesap makinesi</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
-    body {
+      body {
         font-family: Orbitron;
-        display:flex;
+        display: flex;
         align-items: center;
         justify-content: center;
         height: 100vh;
         overflow: hidden;
         background-color: antiquewhite;
         background-image: linear-gradient(pink, purple);
-       
-    }
-    *{
+      }
+      * {
         font-family: Orbitron;
-    }
-    .row {
-        display:flex;
+      }
+
+      .row {
+        display: flex;
         flex-direction: row;
         gap: 8px;
-        
-    }
-    
-    .row button {
-    display:flex;
-    width:64px;
-    height:64px;
-    justify-content: center;
-    align-items: center;
-    border-radius:100%;
-    border: 0;
-    font-size: 24px;
-    
-    }
-   .zero {
-   width: 136px !important;
-   border-radius: 64px !important;
-   }
- .container {
-    display:flex;
-    flex-direction: column;
-    gap: 12px;
-    background-color: rgba(233, 182, 247, 0.753);
-    border-radius: 30px;
-    padding: 30px;
-    box-shadow: 0 0 20px blueviolet;
-    width: 275px;
- }
- .result {
-    display:flex;
-    width: 100%;
-    justify-content: flex-end;
-    font-size: 38px;
-    background-color:  white;
-    padding-top: 50px;
-    border-radius: 16px;
-    word-break: break-all;
- }
- .result div {
-    padding-left: 8px;
-    padding-right: 8px;
- }
- .color1 {
-    background-color: rgb(179, 207, 149);
-}
- .color2 {
-    background-color:  rgb(177, 224, 224);
- }
- 
-  .color3 {
-    background-color: rgb(177, 115, 235);
-  }
-  
+      }
+
+      .row button {
+        display: flex;
+        width: 64px;
+        height: 64px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        border: 0;
+        font-size: 24px;
+      }
+      .zero {
+        width: 136px !important;
+        border-radius: 64px !important;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        background-color: rgba(233, 182, 247, 0.753);
+        border-radius: 30px;
+        padding: 30px;
+        box-shadow: 0 0 20px blueviolet;
+        width: 275px;
+      }
+      .result {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        font-size: 38px;
+        background-color: white;
+        padding-top: 50px;
+        border-radius: 16px;
+        word-break: break-all;
+      }
+      .result div {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+      .color1 {
+        background-color: rgb(179, 207, 149);
+      }
+      .color2 {
+        background-color: rgb(177, 224, 224);
+      }
+
+      .color3 {
+        background-color: rgb(177, 115, 235);
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-   <div class="result">
-   <div id="ekran">0</div>
-   </div>
-        <div class="row">
-        <button onclick="tikla('ac')"class="color2">AC</button>
-        <button onclick="tikla('-')"class="color1">-</button>
-        <button onclick="tikla('%')"class="color1">%</button>
-        <button onclick="tikla('/')"class="color1">÷</button>
-    </div>
-    <div class="row">
+      <div class="result">
+        <div id="ekran">0</div>
+      </div>
+      <div class="row">
+        <button onclick="tikla('ac')" class="color2">AC</button>
+        <button onclick="tikla('-')" class="color1">-</button>
+        <button onclick="tikla('%')" class="color1">%</button>
+        <button onclick="tikla('/')" class="color1">÷</button>
+      </div>
+      <div class="row">
         <button onclick="tikla('1')">1</button>
         <button onclick="tikla('2')">2</button>
         <button onclick="tikla('3')">3</button>
         <button onclick="tikla('*')" class="color1">x</button>
-    </div>
-    <div class="row">
+      </div>
+      <div class="row">
         <button onclick="tikla('4')">4</button>
         <button onclick="tikla('5')">5</button>
         <button onclick="tikla('6')">6</button>
         <button onclick="tikla('-')" class="color1">-</button>
-    </div>
-    <div class="row">
+      </div>
+      <div class="row">
         <button onclick="tikla('7')">7</button>
         <button onclick="tikla('8')">8</button>
         <button onclick="tikla('9')">9</button>
         <button onclick="tikla('+')" class="color1">+</button>
-    </div>
-    <div class="row">
-        <button onclick="tikla('0')"class="zero">0</button>
+      </div>
+      <div class="row">
+        <button onclick="tikla('0')" class="zero">0</button>
         <button onclick="tikla(',')">,</button>
         <button onclick="tikla('=')" class="color3">=</button>
-    </div>
+      </div>
     </div>
     <script>
-      const ekran = document.getElementById("ekran")
-      var yazi = ""
-      function tikla(tus){
-        if(tus == "ac"){
-          yazi = "0"
+      const ekran = document.getElementById("ekran");
+      var yazi = "";
+      function tikla(tus) {
+        if (tus == "ac") {
+          yazi = "0";
         } else {
-         if(yazi == "0"){
-          yazi = tus;
-         } else if(tus!= "="){
-          yazi += tus;
-         }
+          if (yazi == "0") {
+            yazi = tus;
+          } else if (tus != "=") {
+            yazi += tus;
+          }
         }
-        console.log("tuş",tus);
-        if(tus == "="){
-          yazi = eval(yazi)
+        console.log("tuş", tus);
+        if (tus == "=") {
+          yazi = eval(yazi);
         }
-        guncelle()
+        guncelle();
       }
-      function guncelle(){
+      function guncelle() {
         ekran.innerHTML = yazi;
       }
-      
     </script>
-</body>
+  </body>
 </html>
