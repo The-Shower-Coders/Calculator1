@@ -71,14 +71,15 @@
         padding-left: 8px;
         padding-right: 8px;
       }
-      .color1 {
+
+      .lime-green {
         background-color: rgb(179, 207, 149);
       }
-      .color2 {
+      .light-blue {
         background-color: rgb(177, 224, 224);
       }
 
-      .color3 {
+      .magenta {
         background-color: rgb(177, 115, 235);
       }
     </style>
@@ -89,54 +90,59 @@
         <div id="ekran">0</div>
       </div>
       <div class="row">
-        <button onclick="tikla('ac')" class="color2">AC</button>
-        <button onclick="tikla('-')" class="color1">-</button>
-        <button onclick="tikla('%')" class="color1">%</button>
-        <button onclick="tikla('/')" class="color1">÷</button>
+        <button onclick="tikla('ac')" class="light-blue">AC</button>
+        <button onclick="tikla('-')" class="lime-green">-</button>
+        <button onclick="tikla('%')" class="lime-green">%</button>
+        <button onclick="tikla('/')" class="lime-green">÷</button>
       </div>
       <div class="row">
         <button onclick="tikla('1')">1</button>
         <button onclick="tikla('2')">2</button>
         <button onclick="tikla('3')">3</button>
-        <button onclick="tikla('*')" class="color1">x</button>
+        <button onclick="tikla('*')" class="lime-green">x</button>
       </div>
       <div class="row">
         <button onclick="tikla('4')">4</button>
         <button onclick="tikla('5')">5</button>
         <button onclick="tikla('6')">6</button>
-        <button onclick="tikla('-')" class="color1">-</button>
+        <button onclick="tikla('-')" class="lime-green">-</button>
       </div>
       <div class="row">
         <button onclick="tikla('7')">7</button>
         <button onclick="tikla('8')">8</button>
         <button onclick="tikla('9')">9</button>
-        <button onclick="tikla('+')" class="color1">+</button>
+        <button onclick="tikla('+')" class="lime-green">+</button>
       </div>
       <div class="row">
         <button onclick="tikla('0')" class="zero">0</button>
         <button onclick="tikla(',')">,</button>
-        <button onclick="tikla('=')" class="color3">=</button>
+        <button onclick="tikla('=')" class="magenta">=</button>
       </div>
     </div>
     <script>
       const ekran = document.getElementById("ekran");
       var yazi = "";
+
       function tikla(tus) {
+
         if (tus == "ac") {
           yazi = "0";
-        } else {
+        } 
+        else {
           if (yazi == "0") {
             yazi = tus;
           } else if (tus != "=") {
             yazi += tus;
           }
         }
-        console.log("tuş", tus);
+
         if (tus == "=") {
           yazi = eval(yazi);
         }
+
         guncelle();
       }
+      
       function guncelle() {
         ekran.innerHTML = yazi;
       }
